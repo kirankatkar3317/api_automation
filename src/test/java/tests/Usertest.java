@@ -1,5 +1,7 @@
 package tests;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.hamcrest.Matchers;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -15,6 +17,7 @@ public class Usertest {
 	public Response response;
 	public Faker faker;
 	public User userPayload;
+	public Logger log;
 
 	@BeforeClass
 	public void payloadData() {
@@ -28,27 +31,35 @@ public class Usertest {
 		userPayload.setEmail(faker.internet().emailAddress());
 		userPayload.setPassword(faker.internet().password());
 		userPayload.setPhone(faker.phoneNumber().cellPhone());
+		
+		log = LogManager.getLogger(this.getClass());
 
 	}
 
 	@Test(priority = 1)
 	public void testPostUser() {
-
+		
+		log.info("________________user created_____________________");
 		response = UserendPoints.createUser(userPayload);
 		response.then().log().body().toString();
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getBody().asString());
+		log.info("________________user successfully created_____________________");
+		
 	}
 
 	@Test(priority = 2)
 	public void testGetUser() {
+		
 		response = UserendPoints.readUser(this.userPayload.getUsername());
-		System.out.println(" ----------------getuser--------------------- ");
+		log.info("________________user fetching_____________________________");
+
 		response.then().log().all();
 
 		Assert.assertEquals(response.getStatusCode(), 200);
 		
-		System.out.println(" ----------------getuser--------------------- ");
+		log.info("________________user fetched successfully_____________________");
+
 	}
 
 	 @Test(priority = 3)
@@ -57,24 +68,32 @@ public class Usertest {
 		userPayload.setEmail(faker.internet().emailAddress());
 
 		response = UserendPoints.updateUser(userPayload, this.userPayload.getUsername());
-		System.out.println(" ----------------updateuser--------------------- ");
+		log.info(" ----------------update user--------------------- ");
 
 		response.then().log().body().toString();
 
 		Assert.assertEquals(response.getStatusCode(), 200);
-		System.out.println(" ----------------updateuser--------------------- ");
-		
+		log.info(" ----------------updated user succesfully--------------------- ");
+
+		log.info(" ----------------updated user fetching--------------------- ");
+
 		Response response = UserendPoints.readUser(userPayload.getUsername());
 		response.then().log().body();
+		
+		log.info(" ----------------updated user fetched successfully--------------------- ");
 	}
 
 	@Test(priority = 4)
 	public void testDeleteUser() {
+		
+		log.info(" ----------------delete user--------------------- ");
+
 		response = UserendPoints.deleteUser(this.userPayload.getUsername());
 		
 		response.then().log().body().toString();
 		
 		Assert.assertEquals(response.getStatusCode(), 200);
+		log.info(" ----------------delete user successfully--------------------- ");
 
 	}
 

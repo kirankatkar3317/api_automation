@@ -5,7 +5,7 @@
     <classes>
       <class name="tests.Ddtest">
         <methods>
-          <include name="testPostUser" invocation-numbers="0 1"/>
+          <include name="testGetUser"/>
         </methods>
       </class> <!-- tests.Ddtest -->
     </classes>

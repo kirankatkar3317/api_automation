@@ -33,7 +33,7 @@ public class DataProviders {
 
 		String apiData[] = new String[rowcount];
 
-		for (int i = 0; i <= rowcount; i++) {
+		for (int i = 1; i <= rowcount; i++) {
 
 			apiData[i - 1] = excelutility.getCellData(i, 1, "Sheet1");
 

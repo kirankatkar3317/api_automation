@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-01T23:28:44 IST" name="Default suite" finished-at="2023-05-01T23:28:51 IST" duration-ms="7109">
+  <suite started-at="2023-05-03T01:33:22 IST" name="Default suite" finished-at="2023-05-03T01:33:34 IST" duration-ms="12228">
     <groups>
     </groups>
-    <test started-at="2023-05-01T23:28:44 IST" name="Default test" finished-at="2023-05-01T23:28:51 IST" duration-ms="7109">
-      <class name="tests.Ddtest">
-        <test-method signature="testPostUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.Ddtest@3e11f9e9]" started-at="2023-05-01T23:28:45 IST" name="testPostUser" data-provider="getData" finished-at="2023-05-01T23:28:49 IST" duration-ms="3704" status="PASS">
+    <test started-at="2023-05-03T01:33:22 IST" name="Default test" finished-at="2023-05-03T01:33:34 IST" duration-ms="12228">
+      <class name="tests.Ddtest2">
+        <test-method signature="testPostUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.Ddtest2@3e11f9e9]" started-at="2023-05-03T01:33:24 IST" name="testPostUser" data-provider="getData" finished-at="2023-05-03T01:33:28 IST" duration-ms="4206" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -48,7 +48,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPostUser -->
-        <test-method signature="testPostUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.Ddtest@3e11f9e9]" started-at="2023-05-01T23:28:49 IST" name="testPostUser" data-provider="getData" finished-at="2023-05-01T23:28:51 IST" duration-ms="1637" status="PASS">
+        <test-method signature="testPostUser(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:1, instance:tests.Ddtest2@3e11f9e9]" started-at="2023-05-03T01:33:28 IST" name="testPostUser" data-provider="getData" finished-at="2023-05-03T01:33:30 IST" duration-ms="1735" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -89,7 +89,29 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testPostUser -->
-      </class> <!-- tests.Ddtest -->
+        <test-method signature="testGetUser(java.lang.String)[pri:2, instance:tests.Ddtest2@3e11f9e9]" started-at="2023-05-03T01:33:30 IST" name="testGetUser" data-provider="getUsername" finished-at="2023-05-03T01:33:32 IST" duration-ms="2025" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[asmita1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetUser -->
+        <test-method signature="testGetUser(java.lang.String)[pri:2, instance:tests.Ddtest2@3e11f9e9]" started-at="2023-05-03T01:33:32 IST" name="testGetUser" data-provider="getUsername" finished-at="2023-05-03T01:33:34 IST" duration-ms="2146" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[abhijit1]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetUser -->
+      </class> <!-- tests.Ddtest2 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
